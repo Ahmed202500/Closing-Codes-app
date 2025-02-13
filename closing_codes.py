@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 
 # Charger les données
-file_path = r"C:\Users\amouaoui\cernbox\WINDOWS\Desktop\Documents stage_CERN\fichiers_Excel\Closing_codes_V1_A_verifier.xlsx"
-df = pd.read_excel(file_path, sheet_name="Sheet1")
+url = r"https://docs.google.com/spreadsheets/d/e/2PACX-1vRKnPCZpn7PKhzp0rQ69Ug-K5GeTvSylN9aBX-XpgbgCj-Jd4tL1f8jP-0phT-8UQ/pub?output=csv"
+df = pd.read_csv(url)
+
 
 # Nettoyer les données (remplir les NaN pour les colonnes fusionnées)
 df["Problème"].fillna(method="ffill", inplace=True)
